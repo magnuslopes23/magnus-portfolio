@@ -1,7 +1,7 @@
 import { Nav } from "@/components/Nav";
 import { ContactForm } from "@/components/ContactForm";
 import { ArrowRight, ArrowUpRight, Check, Cloud, Code, Database, Github, Layers, Linkedin, Mail } from "@/components/Icons";
-import { insights, process, projects, proofPoints, services, siteConfig, skillGroups, strengths, testimonials } from "@/data/site";
+import { insights, process as workProcess, projects, proofPoints, services, siteConfig, skillGroups, strengths, testimonials } from "@/data/site";
 
 const iconMap = [Code, Layers, Database, Cloud];
 
@@ -108,7 +108,7 @@ export default function Home() {
           <div className="container">
             <div className="section-heading centered"><span className="eyebrow">Process</span><h2>Structured enough to reduce risk. Lightweight enough to keep moving.</h2></div>
             <div className="process-grid">
-              {process.map((item) => <article key={item.step}><span>{item.step}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}
+              {workProcess.map((item) => <article key={item.step}><span>{item.step}</span><h3>{item.title}</h3><p>{item.text}</p></article>)}
             </div>
           </div>
         </section>
