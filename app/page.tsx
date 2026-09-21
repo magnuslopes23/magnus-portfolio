@@ -1,5 +1,6 @@
 import { Nav } from "@/components/Nav";
 import { ContactForm } from "@/components/ContactForm";
+import { ProjectVisual } from "@/components/ProjectVisual";
 import { ArrowRight, ArrowUpRight, Check, Github } from "@/components/Icons";
 import { projects, proofPoints, services, siteConfig, skillGroups, strengths, workProcess } from "@/data/site";
 
@@ -62,17 +63,7 @@ export default function Home() {
             <div className="project-list">
               {projects.map((project, index) => (
                 <article className={`project-card accent-${project.accent}`} key={project.id}>
-                  <div className="project-visual" aria-label={`${project.title} workflow`}>
-                    <div className="project-index">0{index + 1}</div>
-                    <div className="flow-diagram">
-                      {project.flow.map((step, stepIndex) => (
-                        <div className="flow-step" key={step}>
-                          <span>{step}</span>
-                          {stepIndex < project.flow.length - 1 && <i aria-hidden="true">→</i>}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  <ProjectVisual id={project.id} index={index} title={project.title} />
                   <div className="project-content">
                     <span className="eyebrow">{project.eyebrow}</span>
                     <h3>{project.title}</h3>
