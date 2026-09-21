@@ -40,14 +40,13 @@ export function ContactForm() {
         <label>Name<input name="name" type="text" autoComplete="name" required minLength={2} maxLength={80} placeholder="Your name" /></label>
         <label>Email<input name="email" type="email" autoComplete="email" required maxLength={160} placeholder="you@company.com" /></label>
       </div>
-      <label>Company / team<input name="company" type="text" autoComplete="organization" maxLength={120} placeholder="Optional" /></label>
-      <label>What do you need help with?<select name="service" defaultValue="Product development">
-        <option>Product development</option><option>Automation</option><option>API / integration</option><option>Architecture / consulting</option><option>Code review</option><option>Full-time role</option><option>Other</option>
-      </select></label>
-      <label>Project context<textarea name="message" required minLength={20} maxLength={3000} rows={6} placeholder="The problem, current setup, desired outcome and any relevant deadline." /></label>
+      <label>What are you trying to build or fix?
+        <textarea name="message" required minLength={20} maxLength={3000} rows={6} placeholder="Tell me the current problem, what you want to change and any important constraints." />
+      </label>
+      <input type="hidden" name="service" value="Portfolio enquiry" />
       <label className="hp-field" aria-hidden="true">Website<input name="website" type="text" tabIndex={-1} autoComplete="off" /></label>
       <button className="button primary submit-button" type="submit" disabled={state === "sending"}>
-        {state === "sending" ? "Sending…" : "Send project brief"} <ArrowRight aria-hidden="true" />
+        {state === "sending" ? "Sending…" : "Send enquiry"} <ArrowRight aria-hidden="true" />
       </button>
       <p className={`form-status ${state}`} role="status" aria-live="polite">{message}</p>
     </form>
