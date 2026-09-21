@@ -2,13 +2,13 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { siteConfig } from "@/data/site";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://your-domain.com";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://magnus-lopes.netlify.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: { default: `${siteConfig.name} — Software Engineer`, template: `%s | ${siteConfig.name}` },
   description: siteConfig.intro,
-  keywords: ["software engineer", "freelance software engineer", "automation engineer", "API developer", "cloud engineer", "Python developer", "Ireland"],
+  keywords: ["software engineer", "automation engineer", "data engineer", "Python developer", "API developer", "Ireland"],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   alternates: { canonical: "/" },
