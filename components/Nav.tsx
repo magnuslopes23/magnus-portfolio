@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { navigation, siteConfig } from "@/data/site";
-import { ArrowUpRight, Menu, X } from "@/components/Icons";
+import { ArrowRight, Menu, X } from "@/components/Icons";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
@@ -24,8 +24,8 @@ export function Nav() {
           {navigation.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
         </nav>
 
-        <a className="nav-cta desktop-only" href={siteConfig.bookingUrl} target="_blank" rel="noreferrer">
-          Book a call <ArrowUpRight aria-hidden="true" />
+        <a className="nav-cta desktop-only" href={siteConfig.contactHref}>
+          Start a project <ArrowRight aria-hidden="true" />
         </a>
 
         <button className="menu-button" type="button" onClick={() => setOpen((v) => !v)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Close menu" : "Open menu"}>
@@ -36,7 +36,7 @@ export function Nav() {
       <div id="mobile-menu" className={`mobile-menu ${open ? "is-open" : ""}`} aria-hidden={!open}>
         <nav aria-label="Mobile navigation">
           {navigation.map((item) => <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</a>)}
-          <a className="button primary" href={siteConfig.bookingUrl} target="_blank" rel="noreferrer">Book a discovery call <ArrowUpRight aria-hidden="true" /></a>
+          <a className="button primary" href={siteConfig.contactHref} onClick={() => setOpen(false)}>Start a project <ArrowRight aria-hidden="true" /></a>
         </nav>
       </div>
     </header>
