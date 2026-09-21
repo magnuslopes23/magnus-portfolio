@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const site = process.env.NEXT_PUBLIC_SITE_URL || "https://your-domain.com";
+  const site = process.env.NEXT_PUBLIC_SITE_URL || "https://magnus-lopes.netlify.app";
   return [{ url: site, lastModified: new Date(), changeFrequency: "monthly", priority: 1 }];
 }
